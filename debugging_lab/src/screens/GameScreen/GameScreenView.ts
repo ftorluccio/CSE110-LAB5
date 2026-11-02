@@ -1,6 +1,6 @@
 import Konva from "konva";
+import { STAGE_HEIGHT, STAGE_WIDTH } from "../../constants.ts";
 import type { View } from "../../types.ts";
-import { STAGE_WIDTH, STAGE_HEIGHT } from "../../constants.ts";
 
 /**
  * GameScreenView - Renders the game UI using Konva
@@ -82,9 +82,8 @@ export class GameScreenView implements View {
 		const maxY = STAGE_HEIGHT - padding;
 
 		// Generate random position
-		const randomX = Math.round(Math.random()) * (maxX - minX) + minX;
-		const randomY = Math.round(Math.random()) * (maxY - minY) + minY;
-
+		const randomX = Math.random() * (maxX - minX) + minX;
+		const randomY = Math.random() * (maxY - minY) + minY;
 		// Update lemon position
 		this.lemonImage.x(randomX);
 		this.lemonImage.y(randomY);
