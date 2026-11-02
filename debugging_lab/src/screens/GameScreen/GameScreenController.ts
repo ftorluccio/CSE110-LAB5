@@ -1,8 +1,8 @@
-import { ScreenController } from "../../types.ts";
+import { GAME_DURATION } from "../../constants.ts";
 import type { ScreenSwitcher } from "../../types.ts";
+import { ScreenController } from "../../types.ts";
 import { GameScreenModel } from "./GameScreenModel.ts";
 import { GameScreenView } from "./GameScreenView.ts";
-import { GAME_DURATION } from "../../constants.ts";
 
 /**
  * GameScreenController - Coordinates game logic between Model and View
@@ -84,8 +84,7 @@ export class GameScreenController extends ScreenController {
 	 * End the game
 	 */
 	private endGame(): void {
-		this.stopTimer;
-
+		this.stopTimer();
 		// Switch to results screen with final score
 		this.screenSwitcher.switchToScreen({
 			type: "result",
